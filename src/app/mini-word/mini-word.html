@@ -1,0 +1,43 @@
+
+<div class="container">
+
+  <h1>Mini Word</h1>
+
+  <p
+    class="paragraphe"
+    [ngStyle]="{
+      'color': couleur,
+      'font-size': taille + 'px',
+      'font-family': police
+    }">
+    {{ texte }}
+  </p>
+
+  <div class="controls">
+
+    <div class="form-group">
+      <input
+        type="color"
+        [(ngModel)]="couleur"
+        title="Choisir une couleur">
+    </div>
+
+    <div class="form-group">
+      <input
+        type="number"
+        [(ngModel)]="taille"
+        min="1"
+        title="Taille de la police">
+    </div>
+
+    <div class="form-group">
+      <select [(ngModel)]="police">
+        @for (p of polices; track p) {
+          <option [value]="p">{{ p }}</option>
+        }
+      </select>
+    </div>
+
+  </div>
+
+</div>

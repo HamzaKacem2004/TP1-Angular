@@ -1,0 +1,46 @@
+
+<div class="container">
+
+  <h1>CvTech - Plateforme de recrutement</h1>
+
+  <div class="content">
+
+    <!-- Partie gauche : Liste des CVs -->
+    <div class="left">
+      <h2>Liste des CVs inscrits</h2>
+
+      <app-cv-list
+        [cvs]="cvs"
+        (cvSelected)="onCvSelected($event)">
+      </app-cv-list>
+    </div>
+
+    <!-- Partie droite : Détails du CV -->
+    
+<!-- Partie droite : Détails du CV -->
+<div class="right">
+
+  <h2>Détail du CV</h2>
+
+  <app-cv-detail
+    [cv]="selectedCv">
+  </app-cv-detail>
+
+  @if (selectedCv) {
+    <div class="reset-container">
+      <button
+        class="reset-button"
+        (click)="resetDetails()">
+
+        <span>↩</span> Retour
+
+      </button>
+    </div>
+    }
+
+    </div>
+
+
+  </div>
+
+</div>

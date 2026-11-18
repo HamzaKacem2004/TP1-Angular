@@ -1,0 +1,69 @@
+
+<div class="container">
+
+  <h1>Calculateur de prix TTC</h1>
+
+  <div class="form-group">
+    <label>Nombre de pièces :</label>
+    <input
+      type="number"
+      [(ngModel)]="quantite"
+      min="0"
+    >
+  </div>
+
+  <div class="form-group">
+    <label>Prix unitaire HT :</label>
+    <input
+      type="number"
+      [(ngModel)]="prixUnitaire"
+      min="0"
+    >
+  </div>
+
+  <div class="form-group">
+    <label>TVA (%) :</label>
+    <input
+      type="number"
+      [(ngModel)]="tva"
+      min="0"
+    >
+  </div>
+
+  <div class="resultat">
+
+    <h2>Résultat du calcul</h2>
+
+    <p>
+      Total HT :
+      {{ totalHT | number:'1.2-2' }}
+    </p>
+
+    <p>
+      Remise appliquée :
+      {{ tauxRemise }} %
+    </p>
+
+    <p>
+      Montant de la remise :
+      {{ montantRemise | number:'1.2-2' }}
+    </p>
+
+    <p>
+      Total HT après remise :
+      {{ totalHTNet | number:'1.2-2' }}
+    </p>
+
+    <p>
+      Montant TVA :
+      {{ montantTVA | number:'1.2-2' }}
+    </p>
+
+    <h2 class="total">
+      Prix TTC :
+      {{ totalTTC | number:'1.2-2' }}
+    </h2>
+
+  </div>
+
+</div>

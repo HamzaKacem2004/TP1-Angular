@@ -1,0 +1,27 @@
+
+<div class="cv-list">
+
+  @for (cv of cvs; track cv.id; let i = $index) {
+
+    <div
+      class="cv-item"
+      [ngStyle]="{
+        'background-color': i % 2 === 0 ? '#e3f2fd' : '#e0e0e0'
+      }"
+      (click)="selectCv(cv)">
+
+      <img
+        [src]="cv.path"
+        [alt]="cv.firstname + ' ' + cv.name"
+        class="avatar">
+
+      <div class="cv-name">
+        <strong>{{ cv.firstname }} {{ cv.name }}</strong>
+        <small>{{ cv.job }}</small>
+      </div>
+
+    </div>
+
+  }
+
+</div>

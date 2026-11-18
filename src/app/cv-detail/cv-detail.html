@@ -1,0 +1,42 @@
+
+@if (cv) {
+
+  <div class="profile">
+
+    @if (cv.path) {
+      <img [src]="cv.path" alt="Photo du candidat" class="photo">
+    } @else {
+      <div class="photo-placeholder">
+        {{ cv.firstname.charAt(0) }}{{ cv.name.charAt(0) }}
+      </div>
+    }
+
+    <h2>{{ cv.firstname }} {{ cv.name }}</h2>
+
+    <p class="job">{{ cv.job }}</p>
+
+    <div class="details">   
+
+      <p><strong>ID :</strong> {{ cv.id }}</p>
+
+      <p><strong>Nom :</strong> {{ cv.name }}</p>
+
+      <p><strong>Prénom :</strong> {{ cv.firstname }}</p>
+
+      <p><strong>Âge :</strong> {{ cv.age }} ans</p>
+
+      <p><strong>CIN :</strong> {{ cv.cin }}</p>
+
+      <p><strong>Poste recherché :</strong> {{ cv.job }}</p>
+
+    </div>
+
+  </div>
+
+} @else {
+
+  <div class="empty">
+    <p>Sélectionnez un CV pour afficher ses détails.</p>
+  </div>
+
+}

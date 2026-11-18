@@ -1,0 +1,66 @@
+
+.profile {
+  text-align: center;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  transform-style: preserve-3d;
+}
+
+.profile:hover {
+  transform: perspective(1000px) rotateY(8deg);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.photo, .photo-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px;
+}
+
+.photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2878c7;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.profile h2 {
+  margin-bottom: 5px;
+  color: #253858;
+}
+
+.job {
+  color: #2878c7;
+  margin-bottom: 25px;
+}
+
+.details {
+  text-align: left;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.details p {
+  padding: 8px 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: #777;
+  text-align: center;
+}

@@ -1,0 +1,91 @@
+
+<div class="todo-container">
+
+  <header class="todo-header">
+    <h2>Ma Todo List</h2>
+    <p>Organisez vos tâches et gérez votre quotidien.</p>
+  </header>
+
+  <div class="todo-layout">
+
+    <section class="tasks-section">
+
+      <div class="section-header">
+        <h3>Liste des tâches</h3>
+        <span class="task-count">{{ todos.length }} tâche(s)</span>
+      </div>
+
+      <div class="tasks-list">
+
+        @if (todos.length === 0) {
+          <div class="empty-state">
+            <p>Aucune tâche pour le moment.</p>
+            <span>Ajoutez votre première tâche !</span>
+          </div>
+        } @else {
+          @for (todo of todos; track $index) {
+            <div class="todo-card">
+
+              <div class="todo-card-header">
+                <h4>{{ todo.name }}</h4>
+
+                <button
+                  class="delete-button"
+                  (click)="deleteTodo($index)">
+                  Supprimer
+                </button>
+              </div>
+
+              <p>{{ todo.content }}</p>
+
+            </div>
+          }
+        }
+
+      </div>
+
+    </section>
+
+    <section class="form-section">
+
+      <h3>Ajouter une nouvelle tâche</h3>
+
+      <p class="form-description">
+        Remplissez les champs suivants pour créer une nouvelle tâche.
+      </p>
+
+      <div class="todo-form">
+
+        <div class="form-group">
+          <label for="name">Nom de la tâche</label>
+
+          <input
+            type="text"
+            id="name"
+            placeholder="Ex : Apprendre Angular"
+            [(ngModel)]="name"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="content">Contenu de la tâche</label>
+
+          <textarea
+            id="content"
+            placeholder="Décrivez votre tâche..."
+            rows="7"
+            [(ngModel)]="content">
+          </textarea>
+        </div>
+
+        <button class="add-button" (click)="addTodo()">
+          + Ajouter la tâche
+        </button>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</div>

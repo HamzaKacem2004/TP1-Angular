@@ -1,0 +1,40 @@
+
+.cv-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cv-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cv-item:hover {
+  background-color: #cfe2ff;
+  transform: translateX(3px);
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #dee2e6;
+}
+
+.cv-name {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cv-name small {
+  color: #6c757d;
+}
